@@ -1,4 +1,4 @@
-# Mancala Game 🎲
+# Mancala Game
 
 A classic **Mancala** board game built with vanilla HTML, CSS, and JavaScript.  
 This is a two-player game played entirely in the browser — no server or database required.
@@ -16,8 +16,9 @@ This is a two-player game played entirely in the browser — no server or databa
 2. On your turn, pick a pit on your side, pick up all stones, and drop one stone in each pit counter-clockwise.
 3. **Skip the opponent's store** — only your own store collects stones.
 4. If your last stone lands in your store → you get **another turn**.
-5. If your last stone lands in an **empty pit on your side** → you **capture** that stone + all stones from the opposite pit into your store.
-6. The game ends when one side is empty. The remaining stones go to the other player's store. **Highest total wins.**
+5. If your last stone lands in a **non-empty pit**, you pick up all stones from that pit and continue distributing until you land in an **empty pit** → then your turn ends.
+6. You may only pick stones from pits on your own side — unless you have no stones left.
+7. The game ends when one side is empty. The remaining stones go to the other player's store. **Highest total wins.**
 
 ## How to Run
 
@@ -59,5 +60,5 @@ Or simply open `HTML/open.html` directly in your browser (CSS paths work both wa
 
 ## Authors
 
-- Project by [Your Name] & [Partner Name]
-- Academic project — 2024
+- **Shira Siton** & **Tamar Aminov**
+- Academic project — 2025

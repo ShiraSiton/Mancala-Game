@@ -230,24 +230,6 @@ function check()
         index=curentId;
     }
     if(finish()) return;
-    if(arr[curentId]==0 && curentId!=0 && curentId!=7) {
-        if(player==1 && curentId>=1 && curentId<=6) {
-            let opp=14-curentId;
-            arr[7]+=arr[opp]+1;
-            arr[opp]=0;
-            document.querySelector('.grid-item-store2').innerHTML=arr[7];
-            document.getElementById(`pit${curentId}`).innerHTML=0;
-            document.getElementById(`pit${opp}`).innerHTML=0;
-        }
-        if(player==2 && curentId>=8 && curentId<=13) {
-            let opp=14-curentId;
-            arr[0]+=arr[opp]+1;
-            arr[opp]=0;
-            document.querySelector('.grid-item-store1').innerHTML=arr[0];
-            document.getElementById(`pit${curentId}`).innerHTML=0;
-            document.getElementById(`pit${opp}`).innerHTML=0;
-        }
-    }
     if(flag)
         player++;//אחרי בדיקה שלא נפל בקופה
 }
