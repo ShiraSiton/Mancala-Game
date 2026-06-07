@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/register.css">
+    <script src="../JS/register.js" defer></script> <!-- עדכון לקרוא את ה-JS אחרי טעינת הדף -->
+</head>
+<body>
+    <form action="" method="post">
+        <div class="imgcontainer">
+          <img src="../IMAGES/images (2).jpeg" alt="image" class="avatar">
+        </div>
+      
+        <div class="container">
+          <label for="uname"><b>mail</b></label>
+          <input type="email" placeholder="Enter mail" id="uname" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="psw" required>
+      
+          <label for="psw"><b>name</b></label>
+          <input type="text" placeholder="Enter First name" id="firstName" required>
+
+          <label for="psw"><b>lastName</b></label>
+          <input type="text" placeholder="Enter last name" id="lastName" required>
+
+          <button type="button" onclick="register(event)">register</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <!-- <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">עדיין לר <a href="#">?</a></span> -->
+        </div>
+    </form>
+
+
+</body>
+</html>

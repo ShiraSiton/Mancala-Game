@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    height: 100vh; /* גובה דף שלם */
+    display: flex; /* משתן פלקס */
+    /* justify-content: center;  */
+    /* מרכז את התוכן אופקית */
+    margin-left: 15%;
+    align-items: center; /* מרכז את התוכן אנכית */
+}
+.imgStart
+{
+    width: auto;
+    height:80%;
+    margin-right: 8%;
+}
+button{
+margin: 10px;
+background-color:deepskyblue;
+width: 16%;
+height: 14%;
+border-radius: 12%;
+font-size:larger;
+}
+

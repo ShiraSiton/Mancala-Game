@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    justify-content: center; /* מרכז במאוזן */
+    align-items: center; /* מרכז במאונך */
+    height: 100vh; /* יש להגדיר גובה של 100vh כדי למרכז במאונך */
+    margin: 0; /* כדי להבטיח שאין רווחים */
+}
+.grid-container {
+    display: grid;
+    border: 5px solid #8b4513;
+    background: #deb887;
+    /* grid-template-columns: repeat(8, 1fr); 8 equal columns */
+    grid-template-rows: repeat(2, 160px); /* 2 equal rows */
+    gap: 20px; /* Optional: space between grid items */
+    margin: 0 auto; /* מרכז את הגריד */
+    grid-template-columns: 120px repeat(6,90px) 120px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    /* width: fit-content;  */
+}
+
+.grid-item {
+   
+    border: 1px solid #8b4513;
+    background: #f5deb3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    /* margin: 5px; */
+    /* gap: 10%; */
+}
+.grid-item-store1
+{
+    border: 2px solid #8b4513;
+    height: 290px;
+    background: #f5deb3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    grid-column: 1; 
+    grid-row: 1 / 3; 
+    border-radius: 8%;
+    margin: 10px;
+
+}
+  #startForm {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+.start-box {
+    background: #deb887;
+    border: 4px solid #8b4513;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.start-box h2 {
+    margin: 0;
+    color: #4a2c0a;
+    font-size: 24px;
+}
+.start-box input {
+    padding: 10px 16px;
+    font-size: 16px;
+    border: 2px solid #8b4513;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+.start-box #startBtn {
+    padding: 12px 30px;
+    font-size: 18px;
+    background: #8b4513;
+    color: #fff8dc;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.start-box #startBtn:hover {
+    background: #6b3410;
+}
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.turn-display {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 12px;
+    background: #8b4513;
+    color: #fff8dc;
+    text-align: center;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#message {
+    min-height: 44px;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    max-width: 400px;
+}
+.grid-item-store2
+{
+    height: 290px;
+    border: 2px solid #8b4513;
+    background: #f5deb3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    grid-column: 8; 
+    grid-row: 1 / 3; 
+    border-radius: 8%;
+    margin: 10px;
+  }
