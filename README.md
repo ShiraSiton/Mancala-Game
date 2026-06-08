@@ -58,7 +58,3 @@ Or simply open `HTML/open.html` directly in your browser (CSS paths work both wa
 - **CSS3** (Grid, Flexbox, custom styling)
 - **Vanilla JavaScript** (no frameworks, no libraries)
 
-## Authors
-
-- **Shira Siton** & **Tamar Aminov**
-- Academic project — 2025

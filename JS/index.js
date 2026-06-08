@@ -10,12 +10,12 @@ let arr=[ 0, 4,4,4 ,4,4,4, 0 ,4,4,4 ,4,4,4];//איפוס נתונים לתחיל
 let board=document.querySelectorAll('.grid-item');
 for(let i=0;i<board.length;i++)
 {
-    board[i].innerHTML='4';
+    board[i].innerHTML=pitHTML(4);
 }
 let store = document.querySelector('.grid-item-store1');
-store.innerHTML='0';
+store.innerHTML=storeHTML(0);
 store = document.querySelector('.grid-item-store2');
-store.innerHTML='0';
+store.innerHTML=storeHTML(0);
 let flag=true;
 let player=1;//פרמטר לדעת איזה שחקן זה עכשיו
 let ind;
@@ -23,6 +23,17 @@ let stones;
 let curentId;
 let player1;
 let player2;
+function pitHTML(n) {
+    if(n==0) return '<span class="pit-count">0</span>';
+    let s='';
+    for(let i=0;i<n;i++) s+='<i class="stone"></i>';
+    return s+'<span class="pit-count">'+n+'</span>';
+}
+function storeHTML(n) {
+    let s='';
+    for(let i=0;i<n;i++) s+='<i class="stone"></i>';
+    return s+'<span class="pit-count">'+n+'</span>';
+}
 function showMessage(msg, isGood) {
     let el = document.getElementById('message');
     el.textContent = msg;
@@ -55,7 +66,7 @@ function check()
             showMessage("הגומה ריקה, בחר גומה אחרת", false);
             return;
         }
-        event.target.innerHTML=0;
+        event.target.innerHTML=pitHTML(0);
         ind= parseInt( curentId)+1;
         stones=parseInt( curentId)+arr[curentId]+1;
         for(let i=ind;i<stones;i++)
@@ -68,14 +79,14 @@ function check()
                     stones++;
                 else{
                     arr[ind]++
-                    document.getElementById(`pit${ind}`).innerHTML=arr[ind];
+                    document.getElementById(`pit${ind}`).innerHTML=pitHTML(arr[ind]);
                 }
                 
             }
             if(ind==14)
             {
                 arr[0]++;
-                document.querySelector('.grid-item-store1').innerHTML=arr[0];
+                document.querySelector('.grid-item-store1').innerHTML=storeHTML(arr[0]);
                 ind=-1;
             }
             ind++;
@@ -99,7 +110,7 @@ function check()
             showMessage("הגומה ריקה, בחר גומה אחרת", false);
             return;
         }
-        event.target.innerHTML=0;
+        event.target.innerHTML=pitHTML(0);
         ind= parseInt( curentId)+1;
         stones=parseInt( curentId)+arr[curentId]+1;
         for(let i=ind;i<stones;i++)
@@ -118,7 +129,7 @@ function check()
                else
                {
                 arr[ind]++
-                document.getElementById(`pit${ind}`).innerHTML=arr[ind];
+                document.getElementById(`pit${ind}`).innerHTML=pitHTML(arr[ind]);
                }    
             }
             if(ind==14)
@@ -161,7 +172,7 @@ function check()
     }
     while(arr[curentId]>1 && flag&&curentId!=0&&curentId!=7)//כל עוד נעצרת בגומה שיש בה עוד גולות לחלק
     {
-        document.getElementById(`pit${index}`).innerHTML=parseInt(0);
+        document.getElementById(`pit${index}`).innerHTML=pitHTML(0);
         ind= curentId+1;
         stones= curentId+arr[curentId]+1;
         arr[curentId]=0;
@@ -175,14 +186,14 @@ function check()
                         stones++;
                     else{
                         arr[ind]++
-                        document.getElementById(`pit${ind}`).innerHTML=arr[ind];
+                        document.getElementById(`pit${ind}`).innerHTML=pitHTML(arr[ind]);
                     }
                     
                 }
                 if(ind==7)//הגעת לקופה שלך
                 {
                     arr[7]++;
-                    document.querySelector('.grid-item-store2').innerHTML=arr[7];
+                    document.querySelector('.grid-item-store2').innerHTML=storeHTML(arr[7]);
                     
                 }
                 if(ind>13)
@@ -205,14 +216,14 @@ function check()
                         stones++;
                     else{
                     arr[ind]++
-                    document.getElementById(`pit${ind}`).innerHTML=arr[ind];
+                    document.getElementById(`pit${ind}`).innerHTML=pitHTML(arr[ind]);
                     }
                 
                 }
                 if(ind==14)
                 {
                     arr[0]++;
-                    document.querySelector('.grid-item-store1').innerHTML=arr[0];
+                    document.querySelector('.grid-item-store1').innerHTML=storeHTML(arr[0]);
                     ind=-1;
                 }
                 ind++;
@@ -244,11 +255,11 @@ function check()
     if(sum1==0)
     {
         arr[7]+=sum2;
-        document.querySelector('.grid-item-store2').innerHTML=arr[7];
+        document.querySelector('.grid-item-store2').innerHTML=storeHTML(arr[7]);
         for(let i=8;i<14;i++)
         {
             arr[i]=0;
-            document.getElementById(`pit${i}`).innerHTML=arr[i];
+            document.getElementById(`pit${i}`).innerHTML=pitHTML(arr[i]);
         }
         showMessage("סיום המשחק! ניצחון לשחקן א", true);
         showTurn("שחקן א");
@@ -258,11 +269,11 @@ function check()
     if(sum2==0)
     {
         arr[0]+=sum1;
-        document.querySelector('.grid-item-store1').innerHTML=arr[0];
+        document.querySelector('.grid-item-store1').innerHTML=storeHTML(arr[0]);
         for(let i=1;i<7;i++)
         {
             arr[i]=0;
-            document.getElementById(`pit${i}`).innerHTML=arr[i];
+            document.getElementById(`pit${i}`).innerHTML=pitHTML(arr[i]);
         } 
         showMessage("סיום המשחק! ניצחון לשחקן ב", true);
         showTurn("שחקן ב");
